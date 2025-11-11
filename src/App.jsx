@@ -32,7 +32,8 @@ const App = () => {
           </Route>
           <Route path="admin" element={<LayoutAdmin />}>
             <Route index element={<AdminDashboard />} />
-            <Route path="creer" element={<CreerJoueur />} />
+            <Route path="creer" element={<CreerJoueur />} />{" "}
+            <Route path="tableau" element={<AdminDashboard />} />
           </Route>
           <Route path="*" element={<Errorpage />} />
         </Routes>

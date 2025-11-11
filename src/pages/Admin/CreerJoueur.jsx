@@ -4,7 +4,9 @@ import toast from "react-hot-toast";
 import Resizer from "react-image-file-resizer";
 import supabase from "../../../supabase";
 import { TiDelete } from "react-icons/ti";
-import { FaEdit } from "react-icons/fa";
+import { FaDice, FaEdit } from "react-icons/fa";
+import { GiCardDraw } from "react-icons/gi";
+import { FaRandom } from "react-icons/fa";
 
 const CreerJoueur = () => {
   const [nom, setNom] = useState("");
@@ -272,13 +274,37 @@ const CreerJoueur = () => {
 
           {/* LISTE DES JOUEURS */}
           <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-red-600 flex items-center justify-center">
-                <Users className="w-6 h-6 text-white" />
+            <div className="flex gap-6 mb-6">
+              {/* Joueurs Inscrits - 60% */}
+              <div className=" bg-white p-6 w-[50%]rounded-xl shadow-md flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-500 to-red-600 flex items-center justify-center">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    Joueurs Inscrits
+                  </h2>
+                  <p className="text-gray-500 mt-1">
+                    Total : {joueursTab.length}
+                  </p>
+                </div>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">
-                Joueurs Inscrits
-              </h2>
+              {/* Tirage au sort - 40% */}
+
+              <div className="w-[50%] bg-white p-6 rounded-xl shadow-md flex flex-col justify-center items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-400 to-red-600 flex items-center justify-center mb-4">
+                  <FaDice className="w-8 h-8 text-white" />
+                </div>
+                <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                  Tirage au sort
+                </h2>
+                <p className="text-gray-500 mb-4">
+                  Faire le tirage au sort maintenant pour le prochain match.
+                </p>
+                <button className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-red-600 text-white font-semibold rounded-lg shadow hover:scale-105 transition-transform">
+                  Lancer le Tirage
+                </button>
+              </div>
             </div>
 
             <div className="space-y-4">
