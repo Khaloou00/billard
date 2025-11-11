@@ -18,144 +18,81 @@ import {
 import { Link } from "react-router";
 import regledejeu from "../assets/regle.pdf";
 import { FaFrancSign, FaTicket } from "react-icons/fa6";
+import vi from "../assets/viob.mp4";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-red-600 to-yellow-500 text-white py-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
+      <section className="relative min-h-screen w-full overflow-hidden text-white flex items-center justify-center py-20 md:py-0">
+        {/* 🔹 Vidéo en arrière-plan */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-0 object-cover 
+          md:w-[60%] lg:w-full h-full"
+        >
+          <source src={vi} type="video/mp4" />
+        </video>
 
-        {/* Illustration SVG de billard */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5">
-          <svg
-            className="w-full h-full max-w-4xl"
-            viewBox="0 0 800 600"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Table de billard */}
-            <rect
-              x="100"
-              y="150"
-              width="600"
-              height="300"
-              rx="20"
-              fill="white"
-              opacity="0.3"
+        {/* 🔹 Overlay sombre pour contraste */}
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+
+        {/* 🔹 Contenu principal */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-8">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
+            <Trophy className="w-5 h-5" />
+            <span className="font-semibold">Tournoi Officiel 2025</span>
+          </div>
+
+          {/* Titre principal */}
+          <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mt-10 md:mt-0">
+            QUI SERA
+            <br />
+            <span className="text-5xl md:text-8xl bg-white text-transparent bg-clip-text drop-shadow-2xl">
+              THE KING OF THE TABLE ?
+            </span>
+          </h1>
+
+          {/* Sous-titre */}
+          <p className="text-lg md:text-2xl text-white/90 max-w-3xl mx-auto px-2">
+            Le plus grand tournoi de billard de Côte d'Ivoire organisé par le QG
+            Lounge Bar
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+            <Link
+              to="/inscription"
+              className="group bg-white text-red-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 shadow-2xl hover:scale-105"
+            >
+              S'inscrire maintenant
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+
+            <a
+              href={regledejeu}
+              download="regle_du_tournoi_QGlounge.pdf"
+              className="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all duration-300"
+            >
+              Voir le règlement
+            </a>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto">
+            <StatCard number="1Million" label="Cagnotte✨" icon={<Trophy />} />
+            <StatCard number="32" label="Joueurs" icon={<Users />} />
+            <StatCard number="5" label="Jours" icon={<Calendar />} />
+            <StatCard
+              number="25.000F"
+              label="Inscription"
+              icon={<FaTicket />}
             />
-            <rect
-              x="120"
-              y="170"
-              width="560"
-              height="260"
-              rx="10"
-              fill="white"
-              opacity="0.5"
-            />
-
-            {/* Boules de billard */}
-            <circle cx="250" cy="300" r="30" fill="white" />
-            <circle cx="320" cy="280" r="30" fill="white" />
-            <circle cx="390" cy="320" r="30" fill="white" />
-            <circle cx="460" cy="300" r="30" fill="white" />
-            <circle cx="530" cy="290" r="30" fill="white" />
-
-            {/* Queue de billard */}
-            <line
-              x1="150"
-              y1="450"
-              x2="650"
-              y2="200"
-              stroke="white"
-              strokeWidth="8"
-              strokeLinecap="round"
-            />
-
-            {/* Trophée stylisé */}
-            <path
-              d="M380 80 L420 80 L430 120 L370 120 Z"
-              fill="white"
-              opacity="0.6"
-            />
-            <rect
-              x="390"
-              y="120"
-              width="20"
-              height="30"
-              fill="white"
-              opacity="0.6"
-            />
-            <ellipse
-              cx="400"
-              cy="70"
-              rx="25"
-              ry="15"
-              fill="white"
-              opacity="0.6"
-            />
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
-              <Trophy className="w-5 h-5" />
-              <span className="font-semibold">Tournoi Officiel 2025</span>
-            </div>
-
-            {/* Titre principal */}
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-              QUI SERA
-              <br />
-              <span className="text-6xl md:text-8xl bg-white text-transparent bg-clip-text drop-shadow-2xl">
-                THE KING OF THE TABLE ?
-              </span>
-            </h1>
-
-            {/* Sous-titre */}
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              Le plus grand tournoi de billard de Côte d'Ivoire organisé par le
-              QG Lounge Bar
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              <Link
-                to="/inscription"
-                className="group bg-white text-red-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 shadow-2xl hover:scale-105"
-              >
-                S'inscrire maintenant
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <a
-                href={regledejeu}
-                download="regle_du_tournoi_QGlounge.pdf"
-                className="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all duration-300"
-              >
-                Voir le règlement
-              </a>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto">
-              <StatCard
-                number="1000.000F"
-                label="Cagnotte✨"
-                icon={<Trophy />}
-              />
-              <StatCard number="32" label="Joueurs" icon={<Users />} />
-              <StatCard number="5" label="Jours" icon={<Calendar />} />
-              <StatCard
-                number="25.000F"
-                label="Inscription"
-                icon={<FaTicket />}
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -170,96 +107,6 @@ export default function HomePage() {
             <p className="text-xl text-gray-600">
               Suivez les résultats en temps réel
             </p>
-
-            {/* Illustration SVG pour les matchs */}
-            <svg
-              className="w-full h-32 mx-auto mt-8 opacity-90"
-              viewBox="0 0 800 120"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              {/* Tables de billard miniatures */}
-              <rect
-                x="100"
-                y="30"
-                width="120"
-                height="60"
-                rx="8"
-                fill="#DC2626"
-                opacity="0.3"
-              />
-              <rect
-                x="110"
-                y="40"
-                width="100"
-                height="40"
-                rx="4"
-                fill="#059669"
-                opacity="0.5"
-              />
-
-              <rect
-                x="340"
-                y="30"
-                width="120"
-                height="60"
-                rx="8"
-                fill="#EAB308"
-                opacity="0.3"
-              />
-              <rect
-                x="350"
-                y="40"
-                width="100"
-                height="40"
-                rx="4"
-                fill="#059669"
-                opacity="0.5"
-              />
-
-              <rect
-                x="580"
-                y="30"
-                width="120"
-                height="60"
-                rx="8"
-                fill="#DC2626"
-                opacity="0.3"
-              />
-              <rect
-                x="590"
-                y="40"
-                width="100"
-                height="40"
-                rx="4"
-                fill="#059669"
-                opacity="0.5"
-              />
-
-              {/* Boules sur les tables */}
-              <circle cx="160" cy="60" r="6" fill="white" />
-              <circle cx="400" cy="60" r="6" fill="white" />
-              <circle cx="640" cy="60" r="6" fill="white" />
-
-              {/* Point LIVE clignotant stylisé */}
-              <circle
-                className=" bg-green-500"
-                cx="160"
-                cy="20"
-                r="8"
-                fill="#DC2626"
-              />
-              <text
-                x="147"
-                y="12"
-                fill="#DC2626"
-                fontSize="10"
-                fontWeight="bold"
-              >
-                LIVE
-              </text>
-            </svg>
           </div>
 
           <LiveMatchesSection />

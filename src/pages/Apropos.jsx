@@ -20,29 +20,29 @@ export default function Apropos() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
               <h1 className="text-4xl md:text-3xl font-extrabold tracking-tight">
-                À propos du tournoi de billard <br /> QUI SERA THE KING OF THE
-                TABLE ?
+                QUI SERA THE KING OF THE TABLE 👑?
               </h1>
               <p className="mt-4 text-lg md:text-xl opacity-95">
-                Rassemblement convivial des passionnés de billard — compétition,
-                fair-play et belles parties. Rejoignez-nous pour des défis, des
-                rencontres et des lots à gagner.
+                32 joueurs. Une seule couronne. Chaque match est une bataille,
+                chaque victoire un pas vers la gloire. Préparez-vous à voir des
+                nerfs d’acier, des coups de maître et une pression maximale ! 🏆
+                Le trône attend. Qui osera s’en emparer ?
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <Link
-                  to="/inscription"
-                  className="inline-block bg-white text-red-600 font-semibold
-                  px-5 py-3 rounded-lg shadow hover:shadow-md transition"
-                >
-                  S'inscrire
-                </Link>
                 <a
                   href={regledejeu}
                   download="regle_du_tournoi_QGlounge.pdf" // Le nom du fichier sera "Reglement-Officiel.pdf"
                   className="inline-block text-white border border-white/30 px-5 py-3 rounded-lg hover:bg-white/10 transition"
                 >
-                  Règles & format
+                  Règles & Format
                 </a>
+                <Link
+                  to="/inscription"
+                  className="inline-block bg-white text-red-600 font-semibold
+                  px-5 py-3 rounded-lg shadow hover:shadow-md transition"
+                >
+                  Nous rejoindre
+                </Link>
               </div>
             </div>
 
