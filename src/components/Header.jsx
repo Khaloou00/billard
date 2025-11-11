@@ -39,11 +39,6 @@ const Header = () => {
               className="w-[50px] h-[60px] lg:w-[60px] lg:h-[70px]"
             />
           </Link>
-          <h1 className="text-xl font-bold text-yellow-400 leading-[0.9]">
-            Communauté <br />
-            Ivoirienne de
-            <br /> Billard
-          </h1>
         </div>
 
         {/* Bouton burger */}

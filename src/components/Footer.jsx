@@ -14,8 +14,6 @@ const Footer = () => {
           >
             <img src={logo} alt="Logo QG" className="w-[50px] h-[60px]" />
           </Link>
-
-          <span className="font-bold text-lg text-yellow-400">Billard QG</span>
         </div>
         {/* Liens rapides */}
         <div className="flex flex-wrap justify-center gap-6 text-sm">
@@ -93,7 +91,7 @@ const Footer = () => {
       <div className="bg-gradient-to-r from-red-900 to-yellow-800 text-gray-200 mt-16 py-8">
         <div className="container mx-auto text-center">
           <p className="text-lg font-semibold mb-3 text-yellow-400">
-            Tournoi Billard © {new Date().getFullYear()}
+            Communauté Ivoirienne de Billard © {new Date().getFullYear()}
           </p>
 
           <div className="mt-4 flex justify-center gap-6">

@@ -2,7 +2,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsappContact = () => {
-  const phoneNumber = "+2250709856380"; // Format international (ex: Suisse +41)
+  const phoneNumber = "+2250100252530"; // Format international (ex: Suisse +41)
   const message =
     "Bonjour CIBillard ! Je vous écris au sujet des services que vous proposez."; // Message par défaut
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(

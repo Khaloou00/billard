@@ -10,7 +10,7 @@ import {
 import Reglement from "./sections/Reglement";
 import { Link } from "react-router";
 import regledejeu from "../assets/regle.pdf";
-
+import Bill from "../assets/Billard.png";
 export default function Apropos() {
   return (
     <main className="min-h-screen bg-gray-50 text-gray-800">
@@ -19,8 +19,9 @@ export default function Apropos() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-                À propos du Tournoi de Billard QJ
+              <h1 className="text-4xl md:text-3xl font-extrabold tracking-tight">
+                À propos du tournoi de billard <br /> QUI SERA THE KING OF THE
+                TABLE ?
               </h1>
               <p className="mt-4 text-lg md:text-xl opacity-95">
                 Rassemblement convivial des passionnés de billard — compétition,
@@ -47,54 +48,7 @@ export default function Apropos() {
 
             <div className="flex-1">
               <div className="w-full max-w-md mx-auto bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/5">
-                <svg
-                  className="w-full h-48 mx-auto"
-                  viewBox="0 0 600 360"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <rect
-                    x="0"
-                    y="0"
-                    width="600"
-                    height="360"
-                    rx="16"
-                    fill="white"
-                    opacity="0.06"
-                  />
-                  <g
-                    transform="translate(40,40)"
-                    stroke="white"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <ellipse
-                      cx="220"
-                      cy="110"
-                      rx="70"
-                      ry="70"
-                      fill="#10b981"
-                      opacity="0.15"
-                    />
-                    <rect
-                      x="40"
-                      y="170"
-                      width="320"
-                      height="40"
-                      rx="8"
-                      fill="#fff"
-                      opacity="0.08"
-                    />
-                    <path d="M60 60 L260 170" stroke="#fff" opacity="0.25" />
-                    <circle cx="220" cy="110" r="8" fill="#fff" />
-                  </g>
-                </svg>
-                <p className="mt-4 text-sm text-white/90 text-center">
-                  Compétition ouverte à tous niveaux — formats singles &
-                  doubles, tenue régulière et animation.
-                </p>
+                <img src={Bill} alt="" />
               </div>
             </div>
           </div>
