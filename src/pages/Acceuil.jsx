@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router";
 import regledejeu from "../assets/regle.pdf";
+import { FaFrancSign, FaTicket } from "react-icons/fa6";
 
 export default function HomePage() {
   return (
@@ -142,13 +143,17 @@ export default function HomePage() {
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto">
-              <StatCard number="500K" label="Prix 1er" icon={<Trophy />} />
+              <StatCard
+                number="1000.000F"
+                label="Cagnotte✨"
+                icon={<Trophy />}
+              />
               <StatCard number="32" label="Joueurs" icon={<Users />} />
               <StatCard number="5" label="Jours" icon={<Calendar />} />
               <StatCard
-                number="25K"
+                number="25.000F"
                 label="Inscription"
-                icon={<DollarSign />}
+                icon={<FaTicket />}
               />
             </div>
           </div>
