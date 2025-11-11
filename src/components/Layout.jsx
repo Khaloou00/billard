@@ -8,7 +8,10 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <div className=" fixed z-10 bottom-[5vh] right-[10vh]">
+      <div
+        className=" fixed z-100 lg:bottom-[5vh] lg:right-[10vh]
+       bottom-[2vh] right-[1vh] "
+      >
         <WhatsappContact />
       </div>
       <Outlet />

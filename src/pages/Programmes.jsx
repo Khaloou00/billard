@@ -127,7 +127,7 @@ export default function Programme() {
   );
 
   return (
-    <section className="py-16 bg-gradient-to-br from-red-800 to-yellow-700 min-h-screen">
+    <section className="py-16 bg-gradient-to-r from-red-500 to-yellow-700 min-h-screen">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -186,7 +186,7 @@ export default function Programme() {
                 : "bg-white/20 text-white hover:bg-white/30"
             }`}
           >
-            <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
             En Direct (
             {matchesData.matches.filter((m) => m.status === "live").length})
           </button>

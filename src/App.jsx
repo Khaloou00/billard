@@ -9,11 +9,12 @@ import TableauAdmin from "./pages/TableauAdmin";
 import Layout from "./components/Layout";
 import Joueurs from "./pages/Joueurs";
 import ProfilPaiement from "./pages/ProfilPaiement";
-import { Errorpage } from "./pages/Errorpage";
+import Errorpage from "./pages/Errorpage";
 import TableauAdmin2 from "./pages/TableauAdmin2";
 import LayoutAdmin from "./components/LayoutAdmin";
-import AdmiDashboard from "./pages/Admin/AdmiDashboard";
+
 import CreerJoueur from "./pages/Admin/CreerJoueur";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
 
 const App = () => {
   return (
@@ -30,7 +31,7 @@ const App = () => {
             <Route path="profil-paiement" element={<ProfilPaiement />} />
           </Route>
           <Route path="admin" element={<LayoutAdmin />}>
-            <Route index element={<AdmiDashboard />} />
+            <Route index element={<AdminDashboard />} />
             <Route path="creer" element={<CreerJoueur />} />
           </Route>
           <Route path="*" element={<Errorpage />} />
