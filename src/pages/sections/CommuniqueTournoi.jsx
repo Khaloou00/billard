@@ -171,7 +171,7 @@ export default function CommuniqueTournoi() {
                     "opacity-30 z-10 scale-90 -translate-x-[60%] blur-sm";
                 } else if (isNext) {
                   className +=
-                    "opacity-30 z-10 scale-90 translate-x-[60%] blur-sm";
+                    "opacity-30 z-10 scale-90 translate-x-[15%] lg:translate-x-[60%] blur-sm";
                 } else {
                   className += "opacity-0 z-0 scale-75";
                 }
@@ -198,13 +198,6 @@ export default function CommuniqueTournoi() {
                       <div className="absolute top-6 right-6 bg-yellow-400 text-black font-bold text-xl w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
                         {player.id}
                       </div>
-
-                      {/* Badge King pour l'actif */}
-                      {isActive && (
-                        <div className="absolute top-6 left-6 bg-gradient-to-r from-yellow-300 to-yellow-500 text-black px-4 py-2 rounded-full font-bold text-sm shadow-lg animate-bounce">
-                          👑 En vedette
-                        </div>
-                      )}
                     </div>
                   </div>
                 );
