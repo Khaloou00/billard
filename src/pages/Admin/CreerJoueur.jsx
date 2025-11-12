@@ -5,9 +5,10 @@ import Resizer from "react-image-file-resizer";
 import supabase from "../../../supabase";
 import { TiDelete } from "react-icons/ti";
 import { FaDice, FaEdit } from "react-icons/fa";
-import { GiCardDraw } from "react-icons/gi";
-import { FaRandom } from "react-icons/fa";
+import * as DateFNS from "date-fns";
+import DatePicker from "react-datepicker";
 
+import "react-datepicker/dist/react-datepicker.css";
 const CreerJoueur = () => {
   const [nom, setNom] = useState("");
   const [pseudo, setPseudo] = useState("");
@@ -16,6 +17,24 @@ const CreerJoueur = () => {
   const [joueursTab, setJoueursTab] = useState([]);
   const [modifierJoueur, setModifierJoueur] = useState(false);
   const [modifierJoueurId, setModifierJoueurId] = useState(null);
+
+  const [joueur1Id, setJoueur1Id] = useState(null);
+  const [joueur2Id, setJoueur2Id] = useState(null);
+
+  // DATE ET HEURE
+  const { setHours, setMinutes } = DateFNS;
+
+  const [selectedDateTime, setSelectedDateTime] = useState(
+    setHours(setMinutes(new Date(), 0), 9)
+  );
+  console.log(selectedDateTime);
+
+  const filterPassedTime = (time) => {
+    const currentDate = new Date();
+    const selectedDate = new Date(time);
+    return currentDate.getTime() < selectedDate.getTime();
+  };
+
   const handlePhotoChange = async (e) => {
     const file = e.target.files[0];
 
@@ -146,6 +165,39 @@ const CreerJoueur = () => {
     fetchJoueurs();
   }, []);
 
+  const creerJeuFn = async (e) => {
+    e.preventDefault();
+    if (!joueur1Id || !joueur2Id) {
+      toast.error("Veuillez sélectionner les deux joueurs.");
+      return;
+    }
+    try {
+      const toastId = toast.loading("Création du jeu...");
+      console.log(joueur1Id, joueur2Id);
+      const jeuInfo = {
+        joueurUn: joueur1Id,
+        joueurDeux: joueur2Id,
+        dateHeure: selectedDateTime,
+      };
+      const { error } = await supabase.from("Matchs").insert([jeuInfo]);
+      if (error) {
+        console.log(error);
+        toast.dismiss(toastId);
+        toast.error("Erreur lors de la création du ddddjeu.");
+        return;
+      }
+      toast.dismiss(toastId);
+
+      toast.success("Jeu créé avec succès!");
+      setJoueur1Id(null);
+      setJoueur2Id(null);
+      setSelectedDateTime(setHours(setMinutes(new Date(), 0), 9));
+    } catch (error) {
+      console.log(error);
+      toast.error("Erreur lors de la création jjjjj jeu.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-6">
       <div className="max-w-6xl mx-auto">
@@ -274,37 +326,58 @@ const CreerJoueur = () => {
 
           {/* LISTE DES JOUEURS */}
           <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-gray-100">
-            <div className="flex gap-6 mb-6">
-              {/* Joueurs Inscrits - 60% */}
-              <div className=" bg-white p-6 w-[50%]rounded-xl shadow-md flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-500 to-red-600 flex items-center justify-center">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">
-                    Joueurs Inscrits
-                  </h2>
-                  <p className="text-gray-500 mt-1">
-                    Total : {joueursTab.length}
-                  </p>
-                </div>
-              </div>
-              {/* Tirage au sort - 40% */}
+            <div className=" gap-6 mb-6">
+              <p>débuter un jeu</p>
+              <form action="" onSubmit={creerJeuFn}>
+                <label htmlFor="" className="font-medium">
+                  joueur 1
+                </label>
+                <select
+                  className=" bg-gray-500 text-white"
+                  name=""
+                  id=""
+                  onChange={(e) => setJoueur1Id(e.target.value)}
+                >
+                  <option value="">selectionner joueur 1</option>
+                  {joueursTab.map((joueur, index) => (
+                    <option key={index} value={joueur.id}>
+                      {joueur.nom}
+                    </option>
+                  ))}
+                </select>
+                <label htmlFor="" className="font-medium">
+                  joueur 2
+                </label>
+                <select
+                  className=" bg-gray-500 text-white"
+                  name=""
+                  id=""
+                  onChange={(e) => setJoueur2Id(e.target.value)}
+                >
+                  <option value="">selectionner joueur 2</option>
 
-              <div className="w-[50%] bg-white p-6 rounded-xl shadow-md flex flex-col justify-center items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-yellow-400 to-red-600 flex items-center justify-center mb-4">
-                  <FaDice className="w-8 h-8 text-white" />
+                  {joueursTab.map((joueur, index) => (
+                    <option key={index} value={joueur.id}>
+                      {joueur.nom}
+                    </option>
+                  ))}
+                </select>
+                <div>
+                  <DatePicker
+                    selected={selectedDateTime}
+                    onChange={(date) => setSelectedDateTime(date)}
+                    showTimeSelect
+                    filterTime={filterPassedTime}
+                    dateFormat="MMMM d, yyyy h:mm aa"
+                  />
+                  ;
                 </div>
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">
-                  Tirage au sort
-                </h2>
-                <p className="text-gray-500 mb-4">
-                  Faire le tirage au sort maintenant pour le prochain match.
-                </p>
-                <button className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-red-600 text-white font-semibold rounded-lg shadow hover:scale-105 transition-transform">
-                  Lancer le Tirage
-                </button>
-              </div>
+                <input
+                  className="bg-amber-600 p-2 text-white block"
+                  type="submit"
+                  value={"Debuter le jeu"}
+                />
+              </form>
             </div>
 
             <div className="space-y-4">

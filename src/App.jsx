@@ -15,6 +15,7 @@ import LayoutAdmin from "./components/LayoutAdmin";
 
 import CreerJoueur from "./pages/Admin/CreerJoueur";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
+import Matchs from "./pages/Admin/Matchs";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="admin" element={<LayoutAdmin />}>
             <Route index element={<AdminDashboard />} />
             <Route path="creer" element={<CreerJoueur />} />{" "}
+            <Route path="matchs" element={<Matchs />} />
             <Route path="tableau" element={<AdminDashboard />} />
           </Route>
           <Route path="*" element={<Errorpage />} />
