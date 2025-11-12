@@ -153,7 +153,7 @@ const Header = () => {
                   shadow-md hover:shadow-xl hover:scale-105 transition-all duration-200"
               >
                 <UserPlus size={18} />
-                Être membre
+                Être membre✨
               </NavLink>
             </div>
           </div>
