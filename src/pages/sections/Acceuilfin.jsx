@@ -213,51 +213,58 @@ const Acceuilfin = () => {
             <InfoCard
               icon={<Award size={32} />}
               title="Récompenses"
-              description="800 000 FCFA"
+              description="1 000 000 FCFA"
               details="+ Trophées et prix spéciaux"
             />
           </div>
         </div>
       </section>
 
-      {/* Récompenses */}
-      <section className="py-20 px-6 bg-gradient-to-r from-red-600 to-yellow-500 text-white">
-        <div className="max-w-7xl mx-auto">
+      {/* Prix Spéciaux */}
+      <section className="py-20 px-6 bg-gradient-to-br from-yellow-500 via-red-600 to-yellow-700 text-white relative overflow-hidden">
+        {/* Effet décoratif animé */}
+        <div className="absolute inset-0 bg-[url('/path/to/pattern.svg')] opacity-10 animate-pulse"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-              Récompenses Exceptionnelles
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
+              🎯 Prix Spéciaux du Tournoi
             </h2>
-            <p className="text-xl text-white/90">
-              Plus de 800 000 FCFA de prix à remporter
+            <p className="text-lg md:text-xl text-white/90 font-light">
+              Trois distinctions uniques pour récompenser l’excellence et
+              l’esprit du jeu
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <PrizeCard
-              rank="🥇"
-              title="Champion"
-              prize="500 000 FCFA"
-              bonus="+ Trophée + Titre"
+              rank="🤝"
+              title="Meilleur joueur Fair-Play"
+              prize="Mention spéciale + 50 000 FCFA"
+              bonus="Pour le joueur ayant démontré un comportement exemplaire tout au long du tournoi."
               highlight={true}
             />
+
             <PrizeCard
-              rank="🥈"
-              title="Finaliste"
-              prize="250 000 FCFA"
-              bonus="+ Médaille"
+              rank="🎱"
+              title="Meilleur Coup du Tournoi"
+              prize="Mention spéciale + 50 000 FCFA"
+              bonus="Récompense le joueur ayant réalisé le coup le plus spectaculaire, technique ou décisif du tournoi."
             />
+
             <PrizeCard
-              rank="🥉"
-              title="Demi-finalistes"
-              prize="100 000 FCFA"
-              bonus="Chacun + Médaille"
+              rank="🌟"
+              title="Révélation du Tournoi"
+              prize="Mention spéciale + 50 000 FCFA"
+              bonus="Décernée à un nouveau joueur ayant surpris par sa performance et son talent exceptionnel."
             />
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-lg bg-white/20 backdrop-blur-sm inline-block px-8 py-4 rounded-full border border-white/30">
-              <Star className="inline w-5 h-5 mr-2" />
-              Prix spéciaux : Fair-play • Meilleur coup • Révélation du tournoi
+          <div className="mt-16 text-center">
+            <p className="inline-block bg-white/20 px-8 py-4 rounded-full border border-white/30 text-lg font-medium shadow-md backdrop-blur-sm">
+              <i className="inline-block text-yellow-300 mr-2">🏆</i>
+              Ces prix reflètent l’esprit du tournoi : Passion • Respect •
+              Excellence
             </p>
           </div>
         </div>

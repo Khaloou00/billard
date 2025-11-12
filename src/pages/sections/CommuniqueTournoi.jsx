@@ -124,7 +124,7 @@ export default function CommuniqueTournoi() {
             <FaFacebook className="text-2xl" /> Voir sur Facebook
           </a>
           <a
-            href="https://tiktok.com"
+            href="https://www.tiktok.com/@communaut.ivoirie?is_from_webapp=1&sender_device=pc"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300 shadow-lg"

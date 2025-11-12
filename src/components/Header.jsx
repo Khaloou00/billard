@@ -55,10 +55,10 @@ const Header = () => {
             <Home size={20} />
             Accueil
           </NavLink>
-          <NavLink to="/joueurs" className={navLinkClass}>
+          {/* <NavLink to="/joueurs" className={navLinkClass}>
             <Users size={20} />
             Joueurs
-          </NavLink>
+          </NavLink> */}
           <NavLink to="/programmes" className={navLinkClass}>
             <CalendarDays size={20} />
             Programme
