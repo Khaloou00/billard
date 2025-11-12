@@ -80,7 +80,7 @@ export default function CommuniqueTournoi() {
     const interval = setInterval(() => {
       setDirection("next");
       setCurrentIndex((prev) => (prev + 1) % players.length);
-    }, 3000);
+    }, 3500);
     return () => clearInterval(interval);
   }, [players.length]);
 
