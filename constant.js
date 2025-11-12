@@ -1,4 +1,4 @@
-const tours = [
+const tour = [
   "32emes de finale",
   "16emes de finale",
   "8emes de finale",
@@ -7,4 +7,4 @@ const tours = [
   "finale",
   "vainqueur",
 ];
-export default tours;
+export default tour;

@@ -46,7 +46,7 @@ const Footer = () => {
         `}</style>
         <div className="flex items-center gap-6">
           <a
-            href="https://facebook.com/votrepage"
+            href="https://www.facebook.com/share/g/1CmhbByz5T/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative"

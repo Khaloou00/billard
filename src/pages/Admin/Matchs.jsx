@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../../../supabase";
-import tours from "../../../constant";
+import tour from "../../../constant";
 
 const Matchs = () => {
   const [matchsTab, setMatchsTab] = useState([]);
   const [editingMatch, setEditingMatch] = useState(null);
 
-  const [tourAPreciser, setTourAPreciser] = useState("");
+  const [tourAPreciser, setTourAPreciser] = useState("32emes de finale");
 
   useEffect(() => {
     fetchMatchs();
@@ -34,6 +34,7 @@ const Matchs = () => {
       scoreJoueur1: match.scoreJoueur1 !== null ? match.scoreJoueur1 : 0,
       scoreJoueur2: match.scoreJoueur2 !== null ? match.scoreJoueur2 : 0,
       status: match.status || "À VENIR",
+      tours: match.tours || "32emes de finale",
     });
   };
 
@@ -52,7 +53,7 @@ const Matchs = () => {
           scoreJoueur1: editingMatch.scoreJoueur1,
           scoreJoueur2: editingMatch.scoreJoueur2,
           status: editingMatch.status,
-          tours: tourAPreciser,
+          tours: tourAPreciser.con,
         })
         .eq("id", matchId);
 
@@ -233,7 +234,7 @@ const Matchs = () => {
                           onChange={(e) => setTourAPreciser(e.target.value)}
                           className="px-3 py-1.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
                         >
-                          {tours.map((tour, index) => (
+                          {tour.map((tour, index) => (
                             <option key={index} value={tour}>
                               {tour}
                             </option>
@@ -241,8 +242,8 @@ const Matchs = () => {
                         </select>
                       ) : (
                         <span className="inline-flex items-center justify-center w-10 h-10 bg-purple-100 text-purple-700 rounded-lg font-bold text-lg">
-                          {match.tours !== null ? (
-                            match.tours
+                          {match.tour !== null ? (
+                            match.tour
                           ) : (
                             <span>A préciser</span>
                           )}
