@@ -12,7 +12,9 @@ import ProfilPaiement from "./pages/ProfilPaiement";
 import Errorpage from "./pages/Errorpage";
 import TableauAdmin2 from "./pages/TableauAdmin2";
 import LayoutAdmin from "./components/LayoutAdmin";
+
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 import CreerJoueur from "./pages/Admin/CreerJoueur";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
@@ -20,11 +22,11 @@ import Matchs from "./pages/Admin/Matchs";
 
 const App = () => {
   return (
-    <>
-      <div>
-        {/* ... */}
-        <SpeedInsights />
-      </div>
+    <div>
+      <Analytics />
+
+      <SpeedInsights />
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -45,7 +47,7 @@ const App = () => {
           <Route path="*" element={<Errorpage />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 
