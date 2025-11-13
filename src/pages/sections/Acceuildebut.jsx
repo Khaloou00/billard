@@ -96,7 +96,7 @@ const Acceuildebut = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-4xl mx-auto">
             <StatCard number="1Million" label="Cagnotte✨" icon={<Trophy />} />
             <StatCard number="32" label="Joueurs" icon={<Users />} />
-            <StatCard number="7" label="Jours" icon={<Calendar />} />
+            <StatCard number="5" label="Jours" icon={<Calendar />} />
             <StatCard
               number="25.000F"
               label="Inscription"
