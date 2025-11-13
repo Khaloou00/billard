@@ -107,12 +107,7 @@ export default function CommuniqueTournoi() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold drop-shadow-lg">
           ⚠️ Désolé, les matchs en direct ne sont pas disponibles pour le moment
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-          Pour des raisons techniques, les matchs en direct ne peuvent pas être
-          visualisés pour l'instant. <br />
-          <span className="font-semibold">Mais rassurez-vous 👇</span> <br />
-          Très bientôt, tout sera de retour en ligne !
-        </p>
+
         <div>
           <Arret />
         </div>
@@ -140,11 +135,11 @@ export default function CommuniqueTournoi() {
       {/* 🔹 Slider participants amélioré */}
       <div className="mt-16 text-center px-4 w-full">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
-          Découvrez les participants qui tentent de devenir
+          Qui sera
         </h2>
         <div className="mb-12">
           <span className="inline-block text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-400 bg-clip-text text-transparent animate-pulse drop-shadow-lg">
-            THE KING OF THE TABLE 👑
+            THE KING OF THE TABLE 👑 ?
           </span>
         </div>
 

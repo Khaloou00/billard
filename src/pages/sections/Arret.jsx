@@ -8,8 +8,9 @@ export const Arret = () => {
       {/* Message principal */}
       <div className="max-w-2xl mx-auto mb-12">
         <p className="text-lg text-yellow-100/90">
-          ne partez pas les mains vides ! Découvrez le programme complet et
-          suivez le classement en temps réel.
+          Pour des raisons techniques, les matchs en direct ne peuvent pas être
+          visualisés pour l'instant. Découvrez le programme complet et suivez le
+          classement en temps réel.
         </p>
       </div>
 
