@@ -6,6 +6,7 @@ import c from "../assets/300.png";
 import d from "../assets/400.png";
 import e from "../assets/500.png";
 import f from "../assets/600.png";
+import Bill from "../assets/Billard.png";
 
 export default function Classements() {
   const [images, setImages] = useState([]);
@@ -42,13 +43,13 @@ export default function Classements() {
               </p>
             </div>
 
-            <div className="w-40 h-40 relative">
+            <div className="w-80 h-60 relative">
               <img
-                src={a}
+                src={Bill}
                 alt="Match illustration"
-                className="rounded-full shadow-xl border-4 border-white object-cover w-full h-full"
+                className="rounded-md shadow-xl border-4 border-amber-400 object-cover w-full h-full"
               />
-              <div className="absolute -bottom-9 right-4 bg-white/20 px-3 py-1 rounded-full text-sm flex items-center gap-2 border border-white/30">
+              <div className="absolute -bottom-9 right-25 bg-white/20 px-3 py-1 rounded-full text-sm flex items-center gap-2 border border-white/30">
                 <CalendarDays className="w-4 h-4" />
                 <span>12/11/2025</span>
               </div>
@@ -74,9 +75,7 @@ export default function Classements() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80 group-hover:opacity-90 transition">
                   <div className="absolute bottom-4 left-4 text-white">
                     <h3 className="text-lg font-bold">Match {index + 1}</h3>
-                    <p className="text-sm text-gray-200">
-                      Score final : intensité au rendez-vous ⚡
-                    </p>
+                    <p className="text-sm text-gray-200">⚡</p>
                   </div>
                 </div>
               </div>
