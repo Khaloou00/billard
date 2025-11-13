@@ -25,6 +25,7 @@ import Acceuilfin from "./sections/Acceuilfin.jsx";
 import { da } from "date-fns/locale/da";
 
 import CommuniqueTournoi from "./sections/CommuniqueTournoi.jsx";
+import { Arret } from "./sections/Arret.jsx";
 
 const Acceuil = () => {
   const [matchsTab, setMatchsTab] = useState([]);

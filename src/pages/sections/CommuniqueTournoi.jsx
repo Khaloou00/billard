@@ -35,6 +35,7 @@ import img29 from "../../assets/29.png";
 import img30 from "../../assets/30.png";
 import img31 from "../../assets/31.png";
 import img32 from "../../assets/32.png";
+import { Arret } from "./Arret";
 
 export default function CommuniqueTournoi() {
   const players = [
@@ -104,15 +105,17 @@ export default function CommuniqueTournoi() {
       {/* 🔹 Bloc principal */}
       <div className="max-w-4xl text-center space-y-6">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold drop-shadow-lg">
-          ⚠️ Désolé, les matchs ne sont pas disponibles pour le moment
+          ⚠️ Désolé, les matchs en direct ne sont pas disponibles pour le moment
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-          Pour des raisons techniques, les matchs en direct, à venir et terminés
-          ne peuvent pas être visualisés pour l'instant. <br />
+          Pour des raisons techniques, les matchs en direct ne peuvent pas être
+          visualisés pour l'instant. <br />
           <span className="font-semibold">Mais rassurez-vous 👇</span> <br />
           Très bientôt, tout sera de retour en ligne !
         </p>
-
+        <div>
+          <Arret />
+        </div>
         {/* 🔗 Liens vers les plateformes */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           <a

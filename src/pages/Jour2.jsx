@@ -37,7 +37,7 @@ export default function Jour2() {
               </text>
             </svg>
             <h2 className="text-4xl lg:text-6xl font-bold text-white">
-              Joueurs du Jour 2
+              Matchs du Jour 2
             </h2>
             <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
               <path
