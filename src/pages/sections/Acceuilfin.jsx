@@ -16,8 +16,21 @@ import {
   Link,
 } from "lucide-react";
 import React from "react";
+import { useNavigate } from "react-router";
 
 const Acceuilfin = () => {
+  const navigate = useNavigate();
+  const goToInscription = () => {
+    navigate("/inscription");
+  };
+
+  // Gère l'activation par clavier (Enter / Space)
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      goToInscription();
+    }
+  };
   function StatCard({ number, label, icon }) {
     return (
       <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
@@ -504,15 +517,32 @@ const Acceuilfin = () => {
           <p className="text-xl text-white/90">
             Les inscriptions sont ouvertes ! Seulement 32 places disponibles.
           </p>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            <Link to="/inscription">
-              <button className="group bg-white text-red-600 px-10 py-5 rounded-full font-bold text-xl hover:bg-gray-100 transition-all duration-300 flex items-center gap-3 shadow-2xl hover:scale-105">
-                <CheckCircle className="w-6 h-6" />
-                Inscription immédiate
-                <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </Link>
+            <button
+              type="button"
+              onClick={goToInscription}
+              onKeyDown={handleKeyDown}
+              aria-label="Rejoignez la communauté"
+              className="relative group overflow-hidden bg-gradient-to-r from-yellow-400 to-red-600 text-white 
+                   px-10 py-5 rounded-full font-bold text-xl shadow-2xl transition-all duration-300 
+                   hover:scale-105 hover:shadow-yellow-500/40 flex items-center gap-3"
+            >
+              {/* Effet de lumière en mouvement */}
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent 
+                     -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+              ></span>
+
+              {/* Icône gauche */}
+              <CheckCircle className="w-6 h-6 text-white drop-shadow-md relative z-10" />
+
+              {/* Texte */}
+              <span className="relative z-10">Rejoignez la communauté</span>
+
+              {/* Icône droite animée */}
+              <ChevronRight className="w-6 h-6 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
+            </button>
           </div>
 
           <div className="pt-8 flex flex-wrap justify-center gap-6 text-sm">
