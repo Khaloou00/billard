@@ -1,27 +1,28 @@
 import React from "react";
-import j1 from "../assets/j1.PNG";
-import j2 from "../assets/j2.PNG";
-import j3 from "../assets/j3.PNG";
-import j4 from "../assets/j4.PNG";
-import j5 from "../assets/j5.PNG";
-import j6 from "../assets/j6.JPG";
+import c1 from "../assets/c1.png";
+import c2 from "../assets/c2.png";
+import c3 from "../assets/c3.png";
+import c4 from "../assets/c4.png";
+import c5 from "../assets/c5.png";
+import c6 from "../assets/c6.png";
 
-export default function Jour2() {
+export default function Jour3() {
   const joueurs = [
-    { id: 1, image: j1, nom: "Match 1" },
-    { id: 2, image: j2, nom: "Match 2" },
-    { id: 3, image: j3, nom: "Match 3" },
-    { id: 4, image: j4, nom: "Match 4" },
-    { id: 5, image: j5, nom: "Match 5" },
-    { id: 6, image: j6, nom: "Match 6" },
+    { id: 1, image: c1, nom: "Match 1" },
+    { id: 2, image: c2, nom: "Match 2" },
+    { id: 3, image: c3, nom: "Match 3" },
+    { id: 4, image: c4, nom: "Match 4" },
+    { id: 5, image: c5, nom: "Match 5" },
+    { id: 6, image: c6, nom: "Match 6" },
   ];
 
   return (
-    <section className=" bg-gradient-to-r from-red-500 to-yellow-700 min-h-screen">
+    <section className="bg-gradient-to-r from-red-500 to-yellow-700 pt-7 min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
         {/* En-tête stylisé */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
+            {/* Badge Jour 3 */}
             <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
               <circle cx="32" cy="32" r="28" fill="white" opacity="0.15" />
               <circle cx="32" cy="32" r="18" fill="#FFD700" />
@@ -33,12 +34,15 @@ export default function Jour2() {
                 fontSize="16"
                 fontWeight="800"
               >
-                2
+                3
               </text>
             </svg>
+
             <h2 className="text-4xl lg:text-6xl font-bold text-white">
-              Matchs du Jour 2
+              Matchs du Jour 3
             </h2>
+
+            {/* Petit décor */}
             <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
               <path
                 d="M10 50 L30 10"
@@ -51,12 +55,13 @@ export default function Jour2() {
               <circle cx="46" cy="38" r="5" fill="white" />
             </svg>
           </div>
+
           <p className="text-white/90 text-xl">
             QG Lounge 2025 • Tournoi de Billard
           </p>
         </div>
 
-        {/* Grille de joueurs */}
+        {/* Grille */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {joueurs.map((joueur, index) => (
             <div
@@ -66,7 +71,6 @@ export default function Jour2() {
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
               }}
             >
-              {/* Image du joueur */}
               <div className="aspect-square w-full overflow-hidden">
                 <img
                   src={joueur.image}
@@ -79,7 +83,7 @@ export default function Jour2() {
                 />
               </div>
 
-              {/* Overlay au survol avec le nom */}
+              {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                 <span className="text-white text-lg font-bold bg-yellow-500/90 px-6 py-2 rounded-full shadow-lg">
                   {joueur.nom}
@@ -89,16 +93,16 @@ export default function Jour2() {
           ))}
         </div>
 
-        {/* Badge "En action" en bas */}
+        {/* Badge */}
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl rounded-full px-6 py-3 border border-white/20">
-            <span className="w-3 h-3 bg-gray-800 rounded-full animate-pulse"></span>
-            <span className="text-white/90 font-medium">Matchs terminés</span>
+            <span className="w-3 h-3 bg-green-700 rounded-full animate-pulse"></span>
+            <span className="text-white/90 font-medium">Journée en cours</span>
           </div>
         </div>
       </div>
 
-      {/* Animation d’entrée */}
+      {/* Animations */}
       <style jsx>{`
         @keyframes fadeInUp {
           from {

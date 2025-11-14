@@ -6,6 +6,8 @@ import d from "../assets/d.png";
 import e from "../assets/e.png";
 import f from "../assets/f.png";
 import Jour2 from "./Jour2";
+import Matchs from "./Admin/Matchs";
+import Jour3 from "./Jour3";
 
 export default function Programme() {
   const matches = [
@@ -19,38 +21,12 @@ export default function Programme() {
 
   return (
     <>
+      <Jour3 />
+      <Jour2 />
       <section className="py-16 bg-gradient-to-r from-red-500 to-yellow-700 min-h-screen">
         <div className="max-w-7xl mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
-                <circle cx="32" cy="32" r="28" fill="white" opacity="0.15" />
-                <circle cx="32" cy="32" r="18" fill="#FFD700" />
-                <text
-                  x="32"
-                  y="37"
-                  textAnchor="middle"
-                  fill="#1a1a1a"
-                  fontSize="16"
-                  fontWeight="800"
-                >
-                  5j
-                </text>
-              </svg>
-
-              <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
-                <path
-                  d="M10 50 L30 10"
-                  stroke="white"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  opacity="0.9"
-                />
-                <circle cx="46" cy="38" r="10" fill="white" opacity="0.2" />
-                <circle cx="46" cy="38" r="5" fill="white" />
-              </svg>
-            </div>
             <div className="text-center mb-5">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
@@ -119,8 +95,8 @@ export default function Programme() {
           {/* Footer décoratif */}
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xl rounded-full px-6 py-3 border border-white/20">
-              <span className="w-3 h-3 bg-gray-600 rounded-full animate-pulse"></span>
-              <span className="text-white/90 font-medium">12/11/2025</span>
+              <span className="w-3 h-3 bg-gray-800 rounded-full animate-pulse"></span>
+              <span className="text-white/90 font-medium">Matchs terminés</span>
             </div>
           </div>
         </div>
@@ -138,8 +114,6 @@ export default function Programme() {
           }
         `}</style>
       </section>
-
-      <Jour2 />
     </>
   );
 }
